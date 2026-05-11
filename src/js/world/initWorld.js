@@ -38,7 +38,6 @@ function initWorld()
 
             selectedEntity = currentData;
 
-            // This infoBox update is a fantastic addition.
             ge('infoBox').textContent = selectedEntity.name;
 
             updateInterface();
@@ -47,40 +46,6 @@ function initWorld()
         ge('gameBoard').append(element);
     }
 }
-
-/*
-function initWorld() 
-{
-    ge('gameBoard').innerHTML = '';
-
-    for (let i = 0; i < world.length; i++) 
-    {
-        let currentData = world[i];
-
-        let element = ce('div');
-        element.id = currentData.id;
-        element.style.position = 'absolute';
-        element.style.width = currentData.width + 'px';
-        element.style.height = currentData.height + 'px';
-
-        // Setup initial colors
-        element.style.backgroundColor = currentData.bodyColor;
-        element.style.border = `solid 1px ${currentData.borderColor}`;
-
-        // The Click to Select
-        element.onclick = function() 
-        {
-            selectedEntity = currentData;
-
-            ge('infoBox').textContent = selectedEntity.name;
-
-            updateInterface();
-        };
-
-        ge('gameBoard').append(element);
-    }
-}
-*/
 
 //----//
 
