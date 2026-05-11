@@ -1,0 +1,98 @@
+/* style001.css */
+
+body
+{
+    margin: 0px;
+    font-family: Arial;
+
+    /*
+    background-image: url('../../src/media/textures/sky/sky_clouds_001.jpg');
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    */
+
+    background-color: rgb(34, 202, 248);
+    color: rgb(255, 255, 255);
+}
+
+button
+{
+    margin: 1px;
+    padding: 2px 4px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: solid 1px rgb(255, 255, 255);
+    border-radius: 8px;
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1.0);
+}
+
+button:hover
+{
+    border-color: rgb(0, 255, 255);
+}
+
+button:active
+{
+    color: rgb(0, 255, 255);
+}
+
+.theTitle
+{
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: bold;
+    color: rgb(0, 238, 255);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1.0);
+    z-index: 2;
+}
+
+#gameBoard {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../src/media/textures/sky/sky_clouds_001.jpg');
+    background-repeat: repeat-x; 
+    
+    /* THE ZOOM FIX: 
+       Instead of 100%, we make the image 200% of the viewport height.
+       This makes the clouds massive and breaks the repeating pattern */
+    background-size: auto 200vh; 
+    
+    animation: driftClouds 120s linear infinite; /* Slowed down for bigger clouds */
+    overflow: hidden;
+}
+
+@keyframes driftClouds {
+    from {
+        background-position: 0px 0px; 
+    }
+    to {
+        /* THE MATH FIX: 
+           Because the image is scaled to 200vh tall, and it is a perfect square, 
+           it is exactly 200vh wide. We move it exactly that much to perfectly loop */
+        background-position: -200vh 0px; 
+    }
+}
+
+#infoBox
+{
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1.0);
+}
+
+#distanceBox
+{
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1.0);
+}
+
+/*----*/
+
+/* Dedicated to God the Father */
+/* All Rights Reserved Christopher Andrew Topalian Copyright 2000-2026 */
+/* https://github.com/ChristopherTopalian */
+/* https://github.com/ChristopherAndrewTopalian */
+/* https://sites.google.com/view/CollegeOfScripting */
+
